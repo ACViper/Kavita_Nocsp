@@ -351,8 +351,8 @@ public class Startup
                 new[] { "Accept-Encoding" };
 
             // Don't let the site be iframed outside the same origin (clickjacking)
-            Response.Headers.Remove("X-Frame-Options");
-            Response.Headers.Add("X-Frame-Options", Configuration.XFrameOptions);
+            context.Response.Headers.Remove("X-Frame-Options");
+            context.Response.Headers.Add("X-Frame-Options", Configuration.XFrameOptions);
 
 
             // Setup CSP to ensure we load assets only from these origins
